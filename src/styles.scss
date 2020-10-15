@@ -1,0 +1,75 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin: 0 auto;
+
+  /* to be synced with body<->header<->footer style */
+  min-width: 250px;
+  max-width: 800px;
+
+  background-color: #303030 !important;
+  padding-bottom: 88px;
+  padding-top: 88px;
+}
+@media screen and (max-width: 600px) {
+  body {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+  .mat-dialog-container {
+    padding: 16px !important;
+  }
+}
+@media screen and (min-width: 800px) {
+  body {
+    padding-top: 136px;
+  }
+}
+
+/* everywhere else */
+* {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+.header-title,
+mat-card mat-card-title {
+  font-size: 1.4em !important;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+}
+@media screen and (max-width: 600px) {
+  .header-title {
+    font-size: 1.2em !important;
+  }
+}
+mat-card {
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 800px) {
+  mat-card {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+@media screen and (max-width: 400px) {
+  mat-card {
+    padding: 12px !important;
+  }
+}
+mat-card.page-title {
+  background-color: #444;
+  color: white;
+  padding: 12px 60px 12px 24px;
+}
+mat-card.page-title mat-icon {
+  position: absolute;
+  font-size: 1.4em;
+  top: 8px;
+  right: 24px;
+}
+
+mat-chip {
+  margin-bottom: 0.5em !important;
+}

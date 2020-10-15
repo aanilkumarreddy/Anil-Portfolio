@@ -1,0 +1,35 @@
+<mat-card class="page-title">
+  <mat-card-title>
+    <mat-icon>account_circle</mat-icon>
+    {{ title }}
+  </mat-card-title>
+</mat-card>
+<mat-card class="text-card">
+  <mat-card-header>
+    <div mat-card-avatar class="overview-header-image"></div>
+    <mat-card-title>About me</mat-card-title>
+    <mat-card-subtitle *ngIf="generalData && generalData.position">
+      {{ generalData.position }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/images/anil.jpg" alt="anil" />
+  <mat-card-content *ngIf="generalData && generalData.description">
+    <p>
+      {{ generalData.description }}
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="text-card" *ngIf="(interests || []).length > 0">
+  <mat-card-title>Hobbies and Interests</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let item of interests">
+        <mat-icon class="material-icons" mat-list-icon>{{
+          item.icon
+        }}</mat-icon>
+        <h4 mat-line>{{ item.title }}</h4>
+        <p mat-line>{{ item.subtitle }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

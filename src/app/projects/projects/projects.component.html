@@ -1,0 +1,7 @@
+<mat-card class="page-title">
+  <mat-card-title>
+    <mat-icon>assignment</mat-icon>
+    {{ title }}
+  </mat-card-title>
+</mat-card>
+<app-cv-item *ngFor="let item of projectItems" [cvItem]="item"></app-cv-item>

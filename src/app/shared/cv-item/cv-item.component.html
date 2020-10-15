@@ -1,0 +1,79 @@
+<mat-card class="cv-card closed mat-elevation-z8" *ngIf="cvItem">
+  <span class="cv-thumbnail">
+    <img
+      src="assets/images/{{ cvItem.thumbnail }}"
+      width="100px"
+      *ngIf="cvItem.thumbnail"
+      alt=""
+    />
+    <span class="vertical-divider"></span>
+  </span>
+  <span class="timespan">
+    <span
+      class="timespan-begin"
+      *ngIf="cvItem.begin !== undefined && cvItem.begin !== ''"
+    >
+      {{ cvItem.begin }}
+      <mat-icon>arrow_forward</mat-icon>
+    </span>
+    <span class="timespan-end" *ngIf="cvItem.end">{{ cvItem.end }}</span>
+    <span
+      class="timespan-end"
+      *ngIf="!(cvItem.end !== undefined && cvItem.end !== '')"
+      >now <mat-icon>access_time</mat-icon></span
+    >
+  </span>
+  <mat-card-header>
+    <mat-card-title>{{ cvItem.title }}</mat-card-title>
+    <mat-card-subtitle>{{ cvItem.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p *ngIf="cvItem.description">
+      {{ cvItem.description }}
+    </p>
+    <mat-chip-list
+      selectable="false"
+      *ngIf="((cvItem || {}).tags || []).length > 0"
+    >
+      <mat-chip *ngFor="let tag of cvItem.tags">{{ tag }}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+
+  <button
+    mat-icon-button
+    type="button"
+    class="toggle-details"
+    color="primary"
+    (click)="toggleDetails($event)"
+    *ngIf="
+      cvItem.description ||
+      ((cvItem || {}).tags || []).length > 0 ||
+      cvItem.link ||
+      cvItem.attachment
+    "
+  >
+    <mat-icon aria-label="toggle details"></mat-icon>
+  </button>
+  <mat-card-actions>
+    <a
+      mat-button
+      color="primary"
+      href="{{ cvItem.link }}"
+      target="_blank"
+      *ngIf="(cvItem || {}).link"
+    >
+      <mat-icon>link</mat-icon>
+      VIEW LINK
+    </a>
+    <a
+      mat-button
+      color="primary"
+      href="assets/attachments/{{ cvItem.attachment }}"
+      target="_blank"
+      *ngIf="(cvItem || {}).attachment"
+    >
+      <mat-icon>attachment</mat-icon>
+      VIEW ATTACHED FILE
+    </a>
+  </mat-card-actions>
+</mat-card>

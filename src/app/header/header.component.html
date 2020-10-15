@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="header mat-elevation-z8">
+  <span class="header-menu" *ngIf="windowWidth < 800">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a
+        mat-menu-item
+        *ngFor="let link of navLinks"
+        routerLink="{{ link.location }}"
+        routerLinkActive
+        #rla="routerLinkActive"
+      >
+        <mat-icon>{{ link.icon }}</mat-icon>
+        <span>{{ link.label | uppercase }}</span>
+      </a>
+    </mat-menu>
+  </span>
+  <a
+    [routerLink]="['/overview']"
+    routerLinkActive="router-link-active"
+    class="header-title"
+    *ngIf="generalData"
+  >
+    {{ generalData }}
+  </a>
+  <span class="example-spacer"> </span>
+</mat-toolbar>
+
+<nav mat-tab-nav-bar class="mat-elevation-z8" *ngIf="windowWidth >= 800">
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    routerLink="{{ link.location }}"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    <mat-icon>{{ link.icon }}</mat-icon>
+    <span>{{ link.label | uppercase }}</span>
+  </a>
+</nav>

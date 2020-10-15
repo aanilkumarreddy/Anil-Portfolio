@@ -1,0 +1,31 @@
+<mat-card class="text-card" *ngIf="languageItems !== undefined && languageItems !== [] && languageItems.length > 0">
+  <mat-card-title>languages</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let language of languageItems">
+        <mat-icon mat-list-icon>languages</mat-icon>
+        <h4 mat-line>{{ language.title }}</h4>
+        <p mat-line>
+          <mat-progress-bar color="primary" mode="determinate" value="{{ language.level }}"> </mat-progress-bar>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+<mat-card
+  class="page-title"
+  *ngIf="certificationItems !== undefined && certificationItems !== [] && certificationItems.length > 0"
+>
+  <mat-card-title>
+    <mat-icon>verified_user</mat-icon>
+    certificates
+  </mat-card-title>
+</mat-card>
+<app-cv-item *ngFor="let item of certificationItems" [cvItem]="item"></app-cv-item>
+<mat-card class="page-title" *ngIf="educationItems !== undefined && educationItems !== [] && educationItems.length > 0">
+  <mat-card-title>
+    <mat-icon>school</mat-icon>
+    education
+  </mat-card-title>
+</mat-card>
+<app-cv-item *ngFor="let item of educationItems" [cvItem]="item"></app-cv-item>
