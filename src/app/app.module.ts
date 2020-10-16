@@ -10,8 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-// import { ServiceWorkerModule } from '@angular/service-worker';
-// import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
