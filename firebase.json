@@ -8,25 +8,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "headers": [
-    {
-      "source": "**/*.@(jpg|jpeg|gif|png)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "max-age=360000"
-        }
-      ]
-    },
-    {
-      "source": "**/*.@(js|html)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "max-age=360000"
-        }
-      ]
-    }
-  ]
+  }
 }
