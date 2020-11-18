@@ -9,17 +9,12 @@
     <span class="vertical-divider"></span>
   </span>
   <span class="timespan">
-    <span
-      class="timespan-begin"
-      *ngIf="cvItem.begin !== undefined && cvItem.begin !== ''"
-    >
+    <span class="timespan-begin" *ngIf="cvItem.begin">
       {{ cvItem.begin }}
       <mat-icon>arrow_forward</mat-icon>
     </span>
     <span class="timespan-end" *ngIf="cvItem.end">{{ cvItem.end }}</span>
-    <span
-      class="timespan-end"
-      *ngIf="!(cvItem.end !== undefined && cvItem.end !== '')"
+    <span class="timespan-end" *ngIf="!cvItem.end"
       >now <mat-icon>access_time</mat-icon></span
     >
   </span>
@@ -60,6 +55,7 @@
       color="primary"
       href="{{ cvItem.link }}"
       target="_blank"
+      rel="noopener"
       *ngIf="(cvItem || {}).link"
     >
       <mat-icon>link</mat-icon>
@@ -70,6 +66,7 @@
       color="primary"
       href="assets/attachments/{{ cvItem.attachment }}"
       target="_blank"
+      rel="noopener"
       *ngIf="(cvItem || {}).attachment"
     >
       <mat-icon>attachment</mat-icon>

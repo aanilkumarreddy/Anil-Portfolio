@@ -8,32 +8,53 @@
   <mat-card-title>General</mat-card-title>
   <mat-card-content>
     <mat-list>
-      <mat-list-item *ngIf="contactItems !== undefined && contactItems.city !== undefined && contactItems.city !== ''">
+      <mat-list-item
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.city !== undefined &&
+          contactItems.city !== ''
+        "
+      >
         <mat-icon mat-list-icon>place</mat-icon>
         <h4 mat-line>{{ contactItems.city }}</h4>
       </mat-list-item>
-      <mat-list-item *ngIf="contactItems !== undefined && contactItems.mail !== undefined && contactItems.mail !== ''">
+      <mat-list-item
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.mail !== undefined &&
+          contactItems.mail !== ''
+        "
+      >
         <mat-icon mat-list-icon>email</mat-icon>
         <p mat-line>
-          <a mat-button color="default" href="mailto:{{ contactItems.mail }}">{{ contactItems.mail }}</a>
+          <a mat-button color="default" href="mailto:{{ contactItems.mail }}">{{
+            contactItems.mail
+          }}</a>
         </p>
       </mat-list-item>
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.phone !== undefined && contactItems.phone !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.phone !== undefined &&
+          contactItems.phone !== ''
+        "
       >
         <mat-icon mat-list-icon>phone</mat-icon>
         <h4 mat-line>Phone</h4>
         <p mat-line>
           <a
-            style=" color: inherit;
-          text-decoration: none;"
+            style="color: inherit; text-decoration: none"
             href="tel:+91 9154429081"
             >{{ contactItems.phone }}</a
           >
         </p>
       </mat-list-item>
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.skype !== undefined && contactItems.skype !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.skype !== undefined &&
+          contactItems.skype !== ''
+        "
       >
         <i mat-list-icon class="icon-skype"></i>
         <h4 mat-line>Skype</h4>
@@ -47,12 +68,22 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.linkedin !== undefined && contactItems.linkedin !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.linkedin !== undefined &&
+          contactItems.linkedin !== ''
+        "
       >
         <i mat-list-icon class="icon-linkedin"></i>
         <h4 mat-line>LinkedIn</h4>
         <p mat-line>
-          <a mat-button color="primary" href="{{ contactItems.linkedin }}" target="_blank">
+          <a
+            mat-button
+            color="primary"
+            href="{{ contactItems.linkedin }}"
+            target="_blank"
+            rel="noopener"
+          >
             <mat-icon>link</mat-icon>
             OPEN PROFILE
           </a>
@@ -60,12 +91,22 @@
       </mat-list-item>
 
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.github !== undefined && contactItems.github !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.github !== undefined &&
+          contactItems.github !== ''
+        "
       >
         <i mat-list-icon class="icon-github"></i>
         <h4 mat-line>GitHub</h4>
         <p mat-line>
-          <a mat-button color="primary" href="{{ contactItems.github }}" target="_blank">
+          <a
+            mat-button
+            color="primary"
+            href="{{ contactItems.github }}"
+            target="_blank"
+            rel="noopener"
+          >
             <mat-icon>link</mat-icon>
             OPEN PROFILE
           </a>
@@ -73,25 +114,43 @@
       </mat-list-item>
       <mat-list-item
         *ngIf="
-          contactItems !== undefined && contactItems.stackoverflow !== undefined && contactItems.stackoverflow !== ''
+          contactItems !== undefined &&
+          contactItems.stackoverflow !== undefined &&
+          contactItems.stackoverflow !== ''
         "
       >
         <i mat-list-icon class="icon-stackoverflow"></i>
         <h4 mat-line>StackOverflow</h4>
         <p mat-line>
-          <a mat-button color="primary" href="{{ contactItems.stackoverflow }}" target="_blank">
+          <a
+            mat-button
+            color="primary"
+            href="{{ contactItems.stackoverflow }}"
+            target="_blank"
+            rel="noopener"
+          >
             <mat-icon>link</mat-icon>
             OPEN PROFILE
           </a>
         </p>
       </mat-list-item>
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.facebook !== undefined && contactItems.facebook !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.facebook !== undefined &&
+          contactItems.facebook !== ''
+        "
       >
         <i mat-list-icon class="icon-facebook2"></i>
         <h4 mat-line>Facebook</h4>
         <p mat-line>
-          <a mat-button color="primary" href="{{ contactItems.facebook }}" target="_blank">
+          <a
+            mat-button
+            color="primary"
+            href="{{ contactItems.facebook }}"
+            target="_blank"
+            rel="noopener"
+          >
             <mat-icon>link</mat-icon>
             OPEN PROFILE
           </a>
@@ -99,12 +158,22 @@
       </mat-list-item>
 
       <mat-list-item
-        *ngIf="contactItems !== undefined && contactItems.twitter !== undefined && contactItems.twitter !== ''"
+        *ngIf="
+          contactItems !== undefined &&
+          contactItems.twitter !== undefined &&
+          contactItems.twitter !== ''
+        "
       >
         <i mat-list-icon class="icon-twitter"></i>
         <h4 mat-line>Twitter</h4>
         <p mat-line>
-          <a mat-button color="primary" href="{{ contactItems.twitter }}" target="_blank">
+          <a
+            mat-button
+            color="primary"
+            href="{{ contactItems.twitter }}"
+            target="_blank"
+            rel="noopener"
+          >
             <mat-icon>link</mat-icon>
             OPEN PROFILE
           </a>
@@ -123,7 +192,13 @@
           <mat-icon mat-list-icon>public</mat-icon>
           <h4 mat-line>{{ item.title }}</h4>
           <p mat-line>
-            <a mat-button color="primary" href="{{ item.link }}" target="_blank">
+            <a
+              mat-button
+              color="primary"
+              href="{{ item.link }}"
+              target="_blank"
+              rel="noopener"
+            >
               <mat-icon>link</mat-icon>
               OPEN PROFILE
             </a>
