@@ -30,3 +30,5 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+// main module
