@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/AnilPortfolio",
+    "public": "dist/anil-portfolio",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
