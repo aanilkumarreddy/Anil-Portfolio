@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +11,9 @@ export class ExperienceComponent implements OnInit {
   experienceItems: any;
   title = 'Professional Experience';
   firebaseSubscription: Subscription;
-  constructor(private db: AngularFireDatabase) {}
+  constructor(private db: AngularFireDatabase) {
+    this.firebaseSubscription = new Subscription();
+  }
 
   getItems(): void {
     const overview = this.db.object('Experience').valueChanges();

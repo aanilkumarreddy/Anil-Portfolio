@@ -1,16 +1,16 @@
-import { AngularFireDatabase } from '@angular/fire/database';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-volunteering',
   templateUrl: './volunteering.component.html',
-  styleUrls: ['./volunteering.component.css'],
+  styleUrls: ['./volunteering.component.scss'],
 })
 export class VolunteeringComponent implements OnInit {
-  volunteerItems: any[];
+  volunteerItems: any[] = [];
   title = 'Voluntary Work and Causes';
-  firebaseSubscription: Subscription;
+  firebaseSubscription: Subscription = new Subscription();
 
   constructor(private db: AngularFireDatabase) {}
 

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css'],
+  styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  educationItems: any[];
-  certificationItems: any[];
-  languageItems;
+  educationItems: any[] = [];
+  certificationItems: any[] = [];
+  languageItems: any[] = [];
   title = 'Education and Certificates';
 
   constructor(private db: AngularFireDatabase) {}

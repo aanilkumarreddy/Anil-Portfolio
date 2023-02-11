@@ -12,7 +12,7 @@ export class CvItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleDetails(event): void {
+  toggleDetails(event: any): void {
     const card = event.target.closest('mat-card');
     if (card.classList.contains('opened')) {
       card.classList.add('closed');

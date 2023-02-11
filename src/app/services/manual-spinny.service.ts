@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { MatSpinner } from '@angular/material/progress-spinner';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 import { Subject } from 'rxjs';
 @Injectable({
@@ -37,7 +37,7 @@ export class ManualSpinnyService {
   }
 
   showSpinner(): void {
-    this.spinnerTopRef.attach(new ComponentPortal(MatSpinner));
+    this.spinnerTopRef.attach(new ComponentPortal(MatProgressSpinner));
   }
 
   stopSpinner(): void {
