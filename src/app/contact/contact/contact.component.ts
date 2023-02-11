@@ -1,16 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css'],
+  styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent implements OnInit, OnDestroy {
-  contactItems;
+export class ContactComponent implements OnInit {
+  contactItems: any = {};
   title = 'Contact Informations';
-  firebaseSubscription: Subscription;
+  firebaseSubscription: Subscription = new Subscription();
   constructor(private db: AngularFireDatabase) {}
 
   getItems(): void {

@@ -9,13 +9,12 @@ import {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   generalData: any;
-  @Input('generalData') set updategeneralData(generalData) {
+  @Input('generalData') set updategeneralData(generalData: any) {
     this.generalData = generalData;
-    console.log(generalData);
   }
 
   navLinks = [
@@ -37,7 +36,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   // if screen size changes it'll update
   @HostListener('window:resize', ['$event'])
-  resize(event): void {
+  resize(event: any): void {
     this.windowWidth = window.innerWidth;
   }
 

@@ -7,6 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [EducationComponent],
-  imports: [CommonModule, SharedModule, EducationRoutingModule],
+  imports: [CommonModule, EducationRoutingModule, SharedModule],
 })
 export class EducationModule {}

@@ -2,12 +2,12 @@ import { ManualSpinnyService } from './services/manual-spinny.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   countObservable: Subscription;
@@ -21,6 +21,9 @@ export class AppComponent implements OnInit, OnDestroy {
     private manualSpinny: ManualSpinnyService
   ) {
     this.manualSpinny.spin$.next(true);
+    this.count = 0;
+    this.countObservable = new Subscription();
+    this.firebaseSubscription = new Subscription();
   }
 
   ngOnInit(): void {

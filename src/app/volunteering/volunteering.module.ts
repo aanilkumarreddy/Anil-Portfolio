@@ -7,10 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [VolunteeringComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    VolunteeringRoutingModule
-  ]
+  imports: [CommonModule, VolunteeringRoutingModule, SharedModule],
 })
-export class VolunteeringModule { }
+export class VolunteeringModule {}

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ExperienceComponent } from './experience/experience.component';
 
 const routes: Routes = [
@@ -8,7 +8,6 @@ const routes: Routes = [
     component: ExperienceComponent,
   },
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
