@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: public
-          path: ./dist/AnilPortfolio
+          path: ./dist/ani-portfolio
   # deploy job
   deploy:
     name: Deploy to firebase
