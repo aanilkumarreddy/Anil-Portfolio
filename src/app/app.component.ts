@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { LocationService } from './services/location.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private titleService: Title,
     private db: AngularFireDatabase,
-    private manualSpinny: ManualSpinnyService
+    private manualSpinny: ManualSpinnyService,
+    private locationService: LocationService
   ) {
     this.manualSpinny.spin$.next(true);
     this.count = 0;
@@ -42,6 +44,9 @@ export class AppComponent implements OnInit, OnDestroy {
       const itemRef = this.db.object('users');
       itemRef.set({ count: 1 + +this.count });
     }, 5000);
+    setTimeout(() => {
+      this.locationService.sendLocationDataToFirebase();
+    }, 100);
   }
 
   setTitle(newTitle: string): void {
